@@ -9,7 +9,7 @@ const loadCatrogoy = () =>{
 const loadActiveButton = (id) => {
   fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => loadMainCategoroyDisplay(data.data))
     .catch(error => console.log(error));
 }
 const loadManuDisplay = (datas) => {
