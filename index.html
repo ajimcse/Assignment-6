@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Assignment-6 </title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="w-11/12 mx-auto py-5">
+            <div class="grid grid-cols-3 items-center">
+                <!-- Left: Logo -->
+                <div class="flex items-center gap-2">
+                    <img class='w-[24px]' src="./images/logo.webp" alt="logo" class="w-8 h-8">
+                    <span class="font-bold text-xl">Paray</span>
+                </div>
+
+                <!-- Middle: Menu (hidden on mobile) -->
+                <ul class="hidden md:flex justify-center gap-6">
+                    <li><a href="#" class="hover:text-blue-600">Home</a></li>
+                    <li><a href="#" class="hover:text-blue-600">About</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Contact</a></li>
+                </ul>
+
+                <!-- Right: Icon / Hamburger -->
+                <div class="flex justify-end">
+                    <!-- Desktop User Icon -->
+                    <img src="https://img.icons8.com/?size=100&id=23264&format=png" alt="user"
+                        class="hidden md:block w-8 h-8">
+
+                    <!-- Mobile Hamburger -->
+                    <button id="menu-btn" class="md:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (toggle) -->
+            <div id="mobile-menu" class="hidden md:hidden mt-3">
+                <ul class="flex flex-col gap-3 text-center">
+                    <li><a href="#" class="block py-2 hover:text-blue-600">Home</a></li>
+                    <li><a href="#" class="block py-2 hover:text-blue-600">About</a></li>
+                    <li><a href="#" class="block py-2 hover:text-blue-600">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+
+    </header>
+    <main>
+        <section>
+            <div class=" text-center py-10">
+                <h3 class="font-bold text-2xl text-slate-400">Bringing Families Together ❤️‍</h3>
+                <h1 class="font-bold text-[60px]">Your Path to Adoption <br> Starts Here</h1>
+                <p class="">It is a long established fact that a reader will be distracted by the readable content of a
+                    page when looking <br> at its layout. The point of using Lorem Ipsum is that it has a.</p>
+                <button class="btn bg-lime-700 text-white m-5 ">View More</button>
+                <img class="block mx-auto" src="./images/pet.webp" alt="">
+            </div>
+        </section>
+
+        <section>
+
+            <div class=" ">
+                <button id="manu" class="mb-10 items-center flex justify-around w-11/12 mx-auto  ">
+
+                </button>
+            </div>
+
+            <div id="loadDisplay" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-11/12 mx-auto ">
+
+            </div>
+            <div id="emptyDiv">
+
+            </div>
+
+
+        </section>
+    </main>
+
+    <footer class=" w-full bg-slate-600 py-20 text-white">
+        <div class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div>
+                <div class="flex py-5 gap-2">
+                    <img src="./images/logo.webp" alt="">
+                    <h4 class="font-bold text-2xl">Peddy</h4>
+
+                </div>
+                <div class="space-y-3">
+                    <p class=" text-cyan-50">Loction: av. Washington 165.NYCA</p>
+                    <p class=" text-cyan-50">54003</p>
+                    <p class=" text-cyan-50">phone: +31 85 964 47 25</p>
+                    <p class=" text-cyan-50">hone: +31 85 964 47 25.</p>
+                    <p class=" text-cyan-50">Openings hours: 9.00 AM - 5.00 PM</p>
+                </div>
+                <div class="flex my-5 gap-2 ">
+                    <div class="flex justify-center space-x-6">
+
+                        <a href="#" target="_blank">
+                            <img class="w-[40px]" src="https://img.icons8.com/?size=96&id=19318&format=png"
+                                alt="Facebook">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img class="w-[40px]" src="https://img.icons8.com/?size=100&id=66767&format=png" alt="X">
+                        </a>
+
+                        <a href="#" target="_blank">
+                            <img class="w-[40px]" src="https://img.icons8.com/?size=96&id=118497&format=png"
+                                alt="YouTube">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img class="w-[40px]" src="https://img.icons8.com/?size=160&id=BrU2BBoRXiWq&format=png"
+                                alt="Instagram">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <h5 class="font-bold py-5 text-2xl">Useful Links </h5>
+                <div class="space-y-3">
+                    <p>Home</p>
+                    <p>About Us</p>
+                    <p>Animals</p>
+                    <p>Foundation</p>
+                    <p>Contact</p>
+                </div>
+            </div>
+            <div class=" font-bold py-10 text-2xl">
+                <h4>Drop Message</h4>
+                <input type="text" placeholder="Enter your email"
+                    class="input input-bordered w-full max-w-xs my-5 bg-slate-600" />
+
+                <button class="btn btn-wide bg-green-600">Subscribe</button>
+
+            </div>
+        </div>
+    </footer>
+    <script src="./script/video.js"></script>
+</body>
+
+</html>
