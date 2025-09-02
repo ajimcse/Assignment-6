@@ -86,11 +86,5 @@ const loadMainCategoroyDisplay = (lodaMCaterogoy) => {
   });
 }
 
-loadMainCategoroy();
-
-
-  // <div class='border   rounded-lg px-10 py-4 '>
-  //    
-  //   
-       
-  //    </div>
+loadMainCategoroy()
+  
