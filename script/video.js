@@ -1,5 +1,5 @@
-const loadCatrogoy = () =>{
-    fetch('https://openapi.programming-hero.com/api/peddy/categories')
+const loadCatrogoy = () => {
+  fetch('https://openapi.programming-hero.com/api/peddy/categories')
     .then(res => res.json())
     .then(data => loadManuDisplay(data.categories))
     .catch(error => console.log(error))
@@ -9,26 +9,41 @@ const loadCatrogoy = () =>{
 const loadActiveButton = (id) => {
   fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
     .then(res => res.json())
-    .then(data => loadMainCategoroyDisplay(data.data))
+    .then(data => {
+      activeRemoveKora();
+      const activeBtn = document.getElementById(`btn-${id}`)
+      activeBtn.classList.add('active')
+      loadMainCategoroyDisplay(data.data)
+    }
+
+    )
     .catch(error => console.log(error));
 }
+const activeRemoveKora = () => {
+  const buttons = document.getElementsByClassName('acBtn');
+  for (let btn of buttons) {
+    btn.classList.remove('active')
+  }
+}
+
 const loadManuDisplay = (datas) => {
-    const manuContiner=document.getElementById('manu')
-    datas.forEach((item) => {
-      const buttonContainer =document.createElement('div')
-      
-     buttonContainer.innerHTML=`
-      <button onclick='loadActiveButton("${item.category}")' class='border rounded border-cyan-200 px-10 py-4'>
-      <img   src="${item.category_icon}" alt=" " class="w-10 h-10 ">
+  const manuContiner = document.getElementById('manu')
+  datas.forEach((item) => {
+    const buttonContainer = document.createElement('div')
+
+    buttonContainer.innerHTML = `
+     
+      <button id='btn-${item.category}' onclick='loadActiveButton("${item.category}")' class='border rounded-2xl border-cyan-200 px-20 py-4 acBtn'>
+      <img   src="${item.category_icon}" alt=" " class="w-10 h-10  ">
           <span class='font-bold'>${item.category}</span>
      </button>
       
   
      `
-   
-      manuContiner.append(buttonContainer)
-      
-    });
+
+    manuContiner.append(buttonContainer)
+
+  });
 };
 loadCatrogoy()
 
@@ -41,12 +56,28 @@ const loadMainCategoroy = () => {
 
 const loadMainCategoroyDisplay = (lodaMCaterogoy) => {
   const loaddisPlayContainer = document.getElementById('loadDisplay');
-  loaddisPlayContainer.innerHTML = '';  
+  loaddisPlayContainer.innerHTML = '';
 
-  
+  if (lodaMCaterogoy == 0) {
+    loaddisPlayContainer.classList.remove('grid')
+    loaddisPlayContainer.innerHTML = `
+    <div class=' w-full justify-center flex flex-col gap-5 items-center'>
+      <img src="/images/error.webp" alt="" />
+      <h2 class='font-bold text-2xl text-center'>No Informaition Available</h2>
+      <p cless='text-center'>It is a long established fact that a reader
+       will be distrxter by the reacdlecontent ofa page when looking  at <br />  
+       its layout the point of using lorem ipsum is the</p>
+    </div>
+
+    `;
+    return;
+  } else {
+    loaddisPlayContainer.classList.add('grid')
+  }
+
   lodaMCaterogoy.forEach((item) => {
     const divContainer = document.createElement('div');
-    
+
     divContainer.innerHTML = `
    <div class="card  bg-base-100 shadow-xl">
   <figure class="px-10 pt-10">
@@ -87,4 +118,49 @@ const loadMainCategoroyDisplay = (lodaMCaterogoy) => {
 }
 
 loadMainCategoroy()
+
+
+
+
+
+
+// const loadActiveButton = (id) => {
+//   fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
+//     .then(res => res.json())
+//     .then(data => {
+//       activeRemoveKora();
+//       const activeBtn = document.getElementById(`btn-${id}`)
+//       activeBtn.classList.add('active')
+//       loadMainCategoroyDisplay(data.data)
+//     }
+
+//     )
+//     .catch(error => console.log(error));
+// }
+// const activeRemoveKora = () => {
+//   const buttons = document.getElementsByClassName('acBtn');
+//   for (let btn of buttons) {
+//     btn.classList.remove('active')
+//   }
+// }
+
+// const loadManuDisplay = (datas) => {
+//   const manuContiner = document.getElementById('manu')
+//   datas.forEach((item) => {
+//     const buttonContainer = document.createElement('div')
+
+//     buttonContainer.innerHTML = `
+     
+//       <button id='btn-${item.category}' onclick='loadActiveButton("${item.category}")' class='border rounded-2xl border-cyan-200 px-20 py-4'>
+//       <img   src="${item.category_icon}" alt=" " class="w-10 h-10  acBtn">
+//           <span class='font-bold'>${item.category}</span>
+//      </button>
+      
   
+//      `
+
+//     manuContiner.append(buttonContainer)
+
+//   });
+// };
+// loadCatrogoy()
