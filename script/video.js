@@ -18,12 +18,34 @@ const loadActiveButton = (id) => {
 
     )
     .catch(error => console.log(error));
-}
+} 
+// active button remeve kora and add kora 
 const activeRemoveKora = () => {
   const buttons = document.getElementsByClassName('acBtn');
   for (let btn of buttons) {
     btn.classList.remove('active')
   }
+}
+// ditels dekhon function 
+const loadDisplayDstels = async (ditels) =>{
+   const url =`https://openapi.programming-hero.com/api/peddy/pet/${ditels}`
+   const res = await fetch(url);
+   const data =await res.json()
+  displayditels(data.petData)
+
+}
+ 
+const displayditels = (data) =>{
+  const modalContainer =document.getElementById('modalContainer');
+  const modal=document.createElement('div')
+   modal.innerHTML=`
+   <div class='w-[200px] mx-auto'> <img src="${data.image}" alt="" />
+    <p>${data.pet_details}</p>
+   </div>
+   
+   ` 
+   modalContainer.append(modal)
+   
 }
 
 const loadManuDisplay = (datas) => {
@@ -79,6 +101,8 @@ const loadMainCategoroyDisplay = (lodaMCaterogoy) => {
     const divContainer = document.createElement('div');
 
     divContainer.innerHTML = `
+
+  
    <div class="card  bg-base-100 shadow-xl">
   <figure class="px-10 pt-10">
     <img src="${item.image}" alt="Shoes" class="rounded-xl h-full w-full" />
@@ -106,9 +130,11 @@ const loadMainCategoroyDisplay = (lodaMCaterogoy) => {
         
 
     <div class="card-actions justify-between pt-5">
-   <img class=' btn border border-cyan-200 rounded ' src="https://img.icons8.com/?size=48&id=82788&format=png" alt="" />
-      <button class="btn border border-cyan-200 rounded"> Adopt </button>
-      <button class="btn  ">Detalis</button>
+   <img class=' btn border text-green-400 rounded ' src="https://img.icons8.com/?size=48&id=82788&format=png" alt="" />
+      <button class="btn border text-green-400 rounded"> Adopt 
+      </button>
+
+      <button onclick='loadDisplayDstels(${item.petId})' class="btn btn-sm text-green-400">Detalis</button>
     </div>
   </div>
 </div>
