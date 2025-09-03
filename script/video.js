@@ -5,7 +5,7 @@ const loadCatrogoy = () => {
     .catch(error => console.log(error))
 }
 
-//  active button add kora function 
+ 
 const loadActiveButton = (id) => {
   fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
     .then(res => res.json())
@@ -19,14 +19,15 @@ const loadActiveButton = (id) => {
     )
     .catch(error => console.log(error));
 } 
-// active button remeve kora and add kora 
+ 
 const activeRemoveKora = () => {
   const buttons = document.getElementsByClassName('acBtn');
   for (let btn of buttons) {
     btn.classList.remove('active')
   }
 }
-// ditels dekhon function 
+ 
+ 
 const loadDisplayDstels = async (ditels) =>{
    const url =`https://openapi.programming-hero.com/api/peddy/pet/${ditels}`
    const res = await fetch(url);
@@ -39,8 +40,8 @@ const displayditels = (data) =>{
   const modalContainer =document.getElementById('modalContainer');
   const modal=document.createElement('div')
    modal.innerHTML=`
-   <div class='w-[200px] mx-auto'> <img src="${data.image}" alt="" />
-    <p>${data.pet_details}</p>
+   <div class='w-[200px] mx-auto my-5 pb-10'> <img src="${data.image}" alt="" />
+     <h2 class='font-bold'>${data.category}</h2>
    </div>
    
    ` 
@@ -48,7 +49,7 @@ const displayditels = (data) =>{
    
 }
 
-const loadManuDisplay = (datas) => {
+ const loadManuDisplay = (datas) => {
   const manuContiner = document.getElementById('manu')
   datas.forEach((item) => {
     const buttonContainer = document.createElement('div')
@@ -130,11 +131,11 @@ const loadMainCategoroyDisplay = (lodaMCaterogoy) => {
         
 
     <div class="card-actions justify-between pt-5">
-   <img class=' btn border text-green-400 rounded ' src="https://img.icons8.com/?size=48&id=82788&format=png" alt="" />
+   <img onclick='loadDisplayDstels(${item.petId})' class=' btn border text-green-400 rounded ' src="https://img.icons8.com/?size=48&id=82788&format=png" alt="" />
       <button class="btn border text-green-400 rounded"> Adopt 
       </button>
 
-      <button onclick='loadDisplayDstels(${item.petId})' class="btn btn-sm text-green-400">Detalis</button>
+      <button  class="btn btn-sm text-green-400">Detalis</button>
     </div>
   </div>
 </div>
@@ -147,46 +148,3 @@ loadMainCategoroy()
 
 
 
-
-
-
-// const loadActiveButton = (id) => {
-//   fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
-//     .then(res => res.json())
-//     .then(data => {
-//       activeRemoveKora();
-//       const activeBtn = document.getElementById(`btn-${id}`)
-//       activeBtn.classList.add('active')
-//       loadMainCategoroyDisplay(data.data)
-//     }
-
-//     )
-//     .catch(error => console.log(error));
-// }
-// const activeRemoveKora = () => {
-//   const buttons = document.getElementsByClassName('acBtn');
-//   for (let btn of buttons) {
-//     btn.classList.remove('active')
-//   }
-// }
-
-// const loadManuDisplay = (datas) => {
-//   const manuContiner = document.getElementById('manu')
-//   datas.forEach((item) => {
-//     const buttonContainer = document.createElement('div')
-
-//     buttonContainer.innerHTML = `
-     
-//       <button id='btn-${item.category}' onclick='loadActiveButton("${item.category}")' class='border rounded-2xl border-cyan-200 px-20 py-4'>
-//       <img   src="${item.category_icon}" alt=" " class="w-10 h-10  acBtn">
-//           <span class='font-bold'>${item.category}</span>
-//      </button>
-      
-  
-//      `
-
-//     manuContiner.append(buttonContainer)
-
-//   });
-// };
-// loadCatrogoy()
