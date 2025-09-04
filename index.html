@@ -96,13 +96,29 @@
             <div id="loadDisplay" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-11/12 mx-auto pb-10 ">
 
             </div>
-            <div id="modalContainer" class=" flex justify-start w-11/12 mx-auto gap-5 rounded flex-wrap">
-     
-                
+            <div id="likeContainer" class=" flex justify-start w-11/12 mx-auto gap-5   flex-wrap">
+
+
 
             </div>
 
+            <div id="modalBtn">
+                <!-- Open the modal using ID.showModal() method -->
+                <button id="showModal" class="btn hidden" onclick="CusTomModal.showModal()">open modal</button>
+                <dialog id="cusTomModal" class="modal modal-bottom sm:modal-middle">
+                    <div class="modal-box">
+                        <div id="modalConten">
 
+                        </div>
+                        <div class="modal-action">
+                            <form method="dialog">
+                                <!-- if there is a button in form, it will close the modal -->
+                                <button class="btn">Close</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
+            </div>
         </section>
     </main>
 
