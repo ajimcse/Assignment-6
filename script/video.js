@@ -18,7 +18,6 @@ const loadActiveButton = (id) => {
     )
     .catch(error => console.log(error));
 } 
- 
 const activeRemoveKora = () => {
   const buttons = document.getElementsByClassName('acBtn');
   for (let btn of buttons) {
@@ -26,6 +25,18 @@ const activeRemoveKora = () => {
   }
 }
   
+const loadDisplaySort = async (sort) =>{
+   const url =`https://openapi.programming-hero.com/api/peddy/pet/${sort}`
+   const res = await fetch(url);
+   const data =await res.json()
+  console.log(data.price)
+
+}
+const sortContainer= (data) =>{
+const sortBtnContainer=document.getElementById('sortBtn');
+console.log(sortBtnContainer);
+}
+
 const loadDisplayModal = async (modal) =>{
    const url =`https://openapi.programming-hero.com/api/peddy/pet/${modal}`
    const res = await fetch(url);
@@ -42,23 +53,20 @@ const loadDisplayModal = async (modal) =>{
 
 }
 const displayDetils= (dataModal) =>{
-   console.log(dataModal);
+   
    const detlasContainer=document.getElementById('modalConten');
    detlasContainer.innerHTML = `
-    <img src="${dataModal.image}" alt="" />
+    <img class='pb-5' src="${dataModal.image}" alt="" />
     <p>${dataModal.pet_details}</p>
    `
-
-  //  document.getElementById('showModal').click()
-  document.getElementById('cusTomModal').showModal()
+    document.getElementById('cusTomModal').showModal()
 }
- 
-  
-const displayModal = (data) =>{
+  const displayModal = (data) =>{
   const modalContainer =document.getElementById('likeContainer');
   const modal=document.createElement('div')
    modal.innerHTML=`
-   <div class='w-[160px] mx-auto my-5 pb-10 '> <img class='rounded-2xl' src="${data.image}" alt="" />
+   <div 
+    class='w-[160px] mx-auto my-5 pb-10 '> <img class='rounded-2xl' src="${data.image}" alt="" />
      <h2 class='font-bold '>${data.category}</h2>
    </div>
    

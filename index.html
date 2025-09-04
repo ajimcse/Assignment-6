@@ -14,26 +14,18 @@
     <header>
         <nav class="w-11/12 mx-auto py-5 items-center">
             <div class="grid grid-cols-3 items-center">
-                <!-- Left: Logo -->
                 <div class="flex items-center gap-2">
                     <img class='w-[24px]' src="./images/logo.webp" alt="logo" class="w-8 h-8">
                     <span class="font-bold text-xl">Paray</span>
                 </div>
-
-                <!-- Middle: Menu (hidden on mobile) -->
                 <ul class="hidden md:flex justify-center gap-6">
                     <li><a href="#" class="hover:text-blue-600">Home</a></li>
                     <li><a href="#" class="hover:text-blue-600">About</a></li>
                     <li><a href="#" class="hover:text-blue-600">Contact</a></li>
                 </ul>
-
-                <!-- Right: Icon / Hamburger -->
                 <div class="flex justify-end">
-                    <!-- Desktop User Icon -->
                     <img src="https://img.icons8.com/?size=100&id=23264&format=png" alt="user"
                         class="hidden md:block w-8 h-8">
-
-                    <!-- Mobile Hamburger -->
                     <button id="menu-btn" class="md:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -43,8 +35,6 @@
                     </button>
                 </div>
             </div>
-
-            <!-- Mobile Menu (toggle) -->
             <div id="mobile-menu" class="hidden md:hidden mt-3">
                 <ul class="flex flex-col gap-3 text-center">
                     <li><a href="#" class="block py-2 hover:text-blue-600">Home</a></li>
@@ -53,10 +43,6 @@
                 </ul>
             </div>
         </nav>
-
-
-
-
     </header>
     <main>
         <section>
@@ -69,10 +55,7 @@
                 <img class="block mx-auto" src="./images/pet.webp" alt="">
             </div>
         </section>
-
         <section>
-
-
             <div class=" ">
                 <div class="text-center py-10">
                     <h2 class="font-bold py-4 text-3xl">Adopt Your Best Friend</h2>
@@ -97,23 +80,16 @@
 
             </div>
             <div id="likeContainer" class=" flex justify-start w-11/12 mx-auto gap-5   flex-wrap">
-
-
-
             </div>
-
             <div id="modalBtn">
-                <!-- Open the modal using ID.showModal() method -->
                 <button id="showModal" class="btn hidden" onclick="CusTomModal.showModal()">open modal</button>
                 <dialog id="cusTomModal" class="modal modal-bottom sm:modal-middle">
                     <div class="modal-box">
                         <div id="modalConten">
-
                         </div>
                         <div class="modal-action">
                             <form method="dialog">
-                                <!-- if there is a button in form, it will close the modal -->
-                                <button class="btn">Close</button>
+                                <button class="btn">Cancel</button>
                             </form>
                         </div>
                     </div>
@@ -128,7 +104,6 @@
                 <div class="flex py-5 gap-2">
                     <img src="./images/logo.webp" alt="">
                     <h4 class="font-bold text-2xl">Peddy</h4>
-
                 </div>
                 <div class="space-y-3">
                     <p class=" text-cyan-50">Loction: av. Washington 165.NYCA</p>
@@ -139,7 +114,6 @@
                 </div>
                 <div class="flex my-5 gap-2 ">
                     <div class="flex justify-center space-x-6">
-
                         <a href="#" target="_blank">
                             <img class="w-[40px]" src="https://img.icons8.com/?size=96&id=19318&format=png"
                                 alt="Facebook">
@@ -159,7 +133,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="">
                 <h5 class="font-bold py-5 text-2xl">Useful Links </h5>
                 <div class="space-y-3">
@@ -174,9 +147,7 @@
                 <h4>Drop Message</h4>
                 <input type="text" placeholder="Enter your email"
                     class="input input-bordered w-full max-w-xs my-5 bg-slate-600" />
-
                 <button class="btn btn-wide bg-green-600">Subscribe</button>
-
             </div>
         </div>
     </footer>
